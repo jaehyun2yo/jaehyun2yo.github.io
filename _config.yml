@@ -1,34 +1,49 @@
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# Site Settings
+baseurl: ""
+url : "https://naye0ng.github.io"
 
-# Build settings
-markdown: kramdown
-permalink: pretty
-plugins:
-  - jekyll-sitemap
-compress_html:
-  clippings: all
-  comments: all
-  startings: [html, head, body]
+# Blog Settings
+theme_settings :
+  title : Grape Theme
+  favicon : assets/favicon.ico
 
-# Pages Path
-defaults:
-  - scope:
-      path: '_pages'
-    values:
-      permalink: /:basename:output_ext
+  # Profile Settings
+  profile :
+    image : assets/img/smile.png
+    username : Nayeong Kim
+    description : creator of Grape-Theme! Grape-Theme is my first jekyll theme and you can customize this theme easily.
+    experience :
+      - start : 2017-05-03
+        end : 2018-05-06
+        experience : company name, title
+    skills : 
+      - skill : HTML5 & CSS
+        value : 85  # Percent value
+        
+  # Icons
+  icons :
+    email:  # Full email address, e.g. "sample@google.com"
+    linkedin:  # Full URL 
+    github: naye0ng
+    gitlab: 
+    bitbucket: 
+    google_plus:
+    twitter:
+    youtube:
+    facebook:
+    instagram:
 
-include:
-  - _pages
+  # Disqus
+  disqus_shortname :
 
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
+# Build Ssttings
 sass:
-  sass_dir: assets/scss
-  style: compressed
-
-# Exclude from processing.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE.text
-  - README.md
-  - SECURITY.md
+  sass_dir: _sass
+  style: :compressed
+gems: [jekyll-paginate]
+bootstrap:
+  assets: true

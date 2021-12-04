@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
-gem 'bundler'
-gem 'jekyll'
-gem 'jekyll-sitemap'
-gem 'wdm', '>= 0.1.0'
+# frozen_string_literal: true
+source "https://rubygems.org"
+gemspec
+
+gem 'github-pages'
+gem "jekyll-paginate"

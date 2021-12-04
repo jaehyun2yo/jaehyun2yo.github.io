@@ -1,28 +1,39 @@
-<header class="navigation fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand font-tertiary h3" href="{{ site.baseurl }}/">
-      {% if site.data.settings.logo %}
-        <img src="{{ site.data.settings.logo | absolute_url }}" alt="{{ site.data.settings.title }}">
-        {% else if %}
-        <h3 class="text-white font-tertiary">{{site.data.settings.title}}</h3>
-      {% endif %}
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
-        </li>
-        {% for link in site.data.settings.menu %}
-          <li class="nav-item {{ class }}">
-            <a class="nav-link" href="{{ link.link }}">{{ link.name }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+{% assign _url = page.url | split: "/" %}
+{% assign current = _url[-1] | split: "." %}
+<header>
+  <nav>
+    <ul>
+      {% case current[0] %}
+      {% when 'tags'%}
+      <!-- tags -->
+      <a href="{{ site.url }}">
+        <li class="btn-nav">Blog</li>
+      </a>
+      <li class="current">Tags</li>
+      <a href="{{ site.url }}/portfolio">
+        <li class="btn-nav">Portfolio</li>
+      </a>
+      <!-- portfolio -->
+      {% when 'portfolio'%}
+      <a href="{{ site.url }}">
+        <li class="btn-nav">Blog</li>
+      </a>
+      <a href="{{ site.url }}/tags">
+        <li class="btn-nav">Tags</li>
+      </a>
+      <li class="current">Portfolio</li>
+      {% else %}
+      <!-- others -->
+      <a href="{{ site.url }}">
+        <li class="current btn-nav">Blog</li>
+      </a>
+      <a href="{{ site.url }}/tags">
+        <li class="btn-nav">Tags</li>
+      </a>
+      <a href="{{ site.url }}/portfolio">
+        <li class="btn-nav">Portfolio</li>
+      </a>
+      {% endcase %}
+    </ul>
   </nav>
 </header>
