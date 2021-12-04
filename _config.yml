@@ -1,6 +1,6 @@
 # Site Settings
 baseurl: ""
-url : "https://naye0ng.github.io"
+url : "https://jaehyun2yo.github.io/"
 
 # Blog Settings
 theme_settings :
@@ -10,8 +10,8 @@ theme_settings :
   # Profile Settings
   profile :
     image : assets/img/smile.png
-    username : Nayeong Kim
-    description : creator of Grape-Theme! Grape-Theme is my first jekyll theme and you can customize this theme easily.
+    username : Jaehyun2yo
+    description : 웹개발 공부중인 취준생
     experience :
       - start : 2017-05-03
         end : 2018-05-06
